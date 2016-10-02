@@ -1,0 +1,38 @@
+using System;
+using System.Numerics;
+
+namespace FactorialTrailingZeroes
+{
+    public class FactorialTrailingZeroes
+    {
+        public static void Main(string[] args)
+        {
+            int number = int.Parse(Console.ReadLine());
+            int countOfZeroes = TrailingZeroes(number);
+            Console.WriteLine(countOfZeroes);
+            Console.Read();
+        }
+        static BigInteger ReturnFactorial(BigInteger number)
+        {
+            BigInteger factorial = 1;
+            for (int i = 1; i <= number; i++)
+            {
+                factorial *= i;
+            }
+            return factorial;
+        }
+        static int TrailingZeroes(BigInteger number)
+        {
+            BigInteger factorial = ReturnFactorial(number);
+            int br = 0;
+            BigInteger num = 0;
+            while (num == 0)
+            {
+                num = factorial % 10;
+                factorial /= 10;
+                if (num == 0) br++;
+            }
+            return br;
+        }
+    }
+}
