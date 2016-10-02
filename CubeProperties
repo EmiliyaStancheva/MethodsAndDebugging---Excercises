@@ -1,0 +1,47 @@
+using System;
+
+
+namespace CubeProperties
+{
+    public class CubeProperties
+    {
+        public static void Main(string[] args)
+        {
+            double side = double.Parse(Console.ReadLine());
+            string parameter = Console.ReadLine();
+            switch (parameter)
+            {
+                case "face":
+                    FaceDiagonal(side);
+                    break;
+                case "space":
+                    SpaceDiagonal(side);
+                    break;
+                case "volume":
+                    VolumeOfCube(side);
+                    break;
+                case "area":
+                    AreaOfCube(side);
+                    break;
+            }
+            Console.Read();
+
+        }
+        static void FaceDiagonal(double sideA)
+        {
+            Console.WriteLine("{0:f2}", sideA*Math.Sqrt(2)); 
+        }
+        static void SpaceDiagonal(double sideA)
+        {
+            Console.WriteLine("{0:f2}", sideA * Math.Sqrt(3));
+        }
+        static void VolumeOfCube(double sideA)
+        {
+            Console.WriteLine("{0:f2}", sideA*sideA*sideA);
+        }
+        static void AreaOfCube(double sideA)
+        {
+            Console.WriteLine("{0:f2}", 6*sideA*sideA);
+        }
+    }
+}
