@@ -1,0 +1,25 @@
+using System;
+using System.Linq;
+
+namespace NumbersInReversedOrder
+{
+    public class NumbersInReversedOrder
+    {
+        public static void Main(string[] args)
+        {
+            string number = Console.ReadLine();
+            string result=ReturnRevesedNumber(number);
+            Console.WriteLine(result);
+            Console.Read();
+        }
+        static string ReturnRevesedNumber(string number)
+        {
+            string result = "";
+            for(int i = number.Length-1; i >= 0; i--)
+            {
+                result += number[i];
+            }
+            return result;
+        }
+    }
+}
