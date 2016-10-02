@@ -1,0 +1,30 @@
+using System;
+
+
+namespace FibonacciNumbers
+{
+    public class FibonacciNumbers
+    {
+        public static void Main(string[] args)
+        {
+            int number = int.Parse(Console.ReadLine());
+            long fib = Fibonacci(number);
+            Console.WriteLine(fib);
+            Console.Read();
+        }
+
+        public static int Fibonacci(int number)
+        {
+            int fibNumber1 = 0;
+            int fibNumber2 = 1;
+            
+            for (int i = 0; i <= number; i++)
+            {
+                int temp = fibNumber1;
+                fibNumber1 = fibNumber2;
+                fibNumber2 = temp + fibNumber2;
+            }
+            return fibNumber1;
+        }
+    }
+}
