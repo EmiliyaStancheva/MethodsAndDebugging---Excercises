@@ -1,0 +1,27 @@
+using System;
+
+
+namespace MaxMethod
+{
+    public class MaxMethod
+    {
+        public static void Main(string[] args)
+        {
+            int firstNumber = int.Parse(Console.ReadLine());
+            int secondNumber = int.Parse(Console.ReadLine());
+            int thirdNumber = int.Parse(Console.ReadLine());
+            int fourthNumber = GetMaxNumber(firstNumber, secondNumber);
+            Console.WriteLine(GetMaxNumber(thirdNumber, fourthNumber));
+            Console.Read();
+        }
+
+        private static int GetMaxNumber(int firstNumber, int secondNumber)
+        {
+            if (firstNumber > secondNumber)
+            {
+                return firstNumber;
+            }
+            else return secondNumber;
+        }
+    }
+}
