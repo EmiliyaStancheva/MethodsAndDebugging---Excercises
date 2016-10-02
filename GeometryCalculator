@@ -1,0 +1,52 @@
+using System;
+
+
+namespace GeometryCalculator
+{
+    public class GeometryCalculator
+    {
+        public static void Main(string[] args)
+        {
+            string parameter = Console.ReadLine();
+            if (parameter == "square")
+            {
+                double sideA = double.Parse(Console.ReadLine());
+                PrintAreaOfSquare(sideA);
+            }
+            else if (parameter == "triangle")
+            {
+                double sideA = double.Parse(Console.ReadLine());
+                double heightA = double.Parse(Console.ReadLine());
+                PrintAreaOfTriangle(sideA, heightA);
+            }
+            else if (parameter == "circle")
+            {
+                double radius = double.Parse(Console.ReadLine());
+                PrintAreaOfCircle(radius);
+            }
+            else if (parameter == "rectangle")
+            {
+                double sideA = double.Parse(Console.ReadLine());
+                double sideB = double.Parse(Console.ReadLine());
+                PrintAreaOfRectangle(sideA, sideB);
+            }
+            Console.Read();
+        }
+        static void PrintAreaOfSquare(double sideA)
+        {
+            Console.WriteLine("{0:f2}", sideA*sideA);
+        }
+        static void PrintAreaOfTriangle(double sideA, double heightA)
+        {
+            Console.WriteLine("{0:f2}", (sideA*heightA)/2);
+        }
+        static void PrintAreaOfRectangle(double sideA, double sideB)
+        {
+            Console.WriteLine("{0:f2}", sideA*sideB);
+        }
+        static void PrintAreaOfCircle(double radius)
+        {
+            Console.WriteLine("{0:f2}", Math.PI*radius*radius);
+        }
+    }
+}
