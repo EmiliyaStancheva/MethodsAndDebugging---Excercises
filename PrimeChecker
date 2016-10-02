@@ -1,0 +1,33 @@
+using System;
+
+
+namespace PrimeChecker
+{
+    public class PrimeChecker
+    {
+        public static void Main(string[] args)
+        {
+            long number = long.Parse(Console.ReadLine());
+            Console.WriteLine(IsPrime(number));
+            Console.Read();
+        }
+
+        private static bool IsPrime(long number)
+        {
+            bool IsPrimeNumber = true;
+            if (number <= 0) IsPrimeNumber = false;
+            else
+            {
+                for(long i = 2; i <= Math.Sqrt(number); i++)
+                {
+                    if(number%i==0 || number == 0)
+                    {
+                        IsPrimeNumber = false;break;
+                    }
+                }
+            }
+            if (IsPrimeNumber) return true;
+            else return false;
+        }
+    }
+}
