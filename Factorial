@@ -1,0 +1,25 @@
+using System;
+using System.Numerics;
+
+namespace Factorial
+{
+    public class Factorial
+    {
+        public static void Main(string[] args)
+        {
+            BigInteger number = BigInteger.Parse(Console.ReadLine());
+            BigInteger factorial = ReturnFactorial(number);
+            Console.WriteLine(factorial);
+            Console.Read();
+        }
+        static BigInteger ReturnFactorial(BigInteger number)
+        {
+            BigInteger factorial=1;
+            for (int i = 1; i <= number; i++)
+            {
+                factorial *= i;
+            }
+            return factorial;
+        }
+    }
+}
